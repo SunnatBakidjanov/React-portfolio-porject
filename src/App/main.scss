@@ -1,0 +1,21 @@
+:root {
+	// fonts
+	--h1-font-size: 3.7em;
+
+	// colors
+	--logo-3d-color: white;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 15px;
+	max-width: 1440px;
+}
+
+@font-face {
+	font-family: Furore;
+	font-style: normal;
+	font-weight: 600;
+	src: url('/assets/fonts/Furore/Furore.otf') format('opentype');
+	font-display: swap;
+}
