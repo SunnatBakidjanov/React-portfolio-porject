@@ -4,7 +4,7 @@ export const TitleH1 = ({ text, name }) => {
 	return (
 		<h1 className={styles.title}>
 			{text}
-			<span> {name}</span>
+			<span className={styles.accent}> {name}</span>
 		</h1>
 	)
 }

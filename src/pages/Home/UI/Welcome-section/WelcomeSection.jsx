@@ -1,3 +1,4 @@
+import { SkillsWelcome } from '../SkillsWelcome/SkillsWelcome'
 import { ThreeDLogo } from '../ThreeDLogo/ThreeDLogo'
 import { TitleH1 } from '../TitleH1/TitleH1'
 import styles from './welcomeSection.module.scss'
@@ -8,6 +9,7 @@ export const WelcomeSection = () => {
 			<div className="container">
 				<div className={styles.wrapper}>
 					<TitleH1 text="Привет я" name="Sunnat" />
+					<SkillsWelcome />
 					<ThreeDLogo />
 				</div>
 			</div>

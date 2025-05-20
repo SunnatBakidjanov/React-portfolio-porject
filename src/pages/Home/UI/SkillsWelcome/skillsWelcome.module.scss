@@ -1,0 +1,25 @@
+.block {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 60px;
+}
+
+.text {
+	height: fit-content;
+	font-size: var(--skills-text-font-size);
+	color: var(--text-color);
+	transition:
+		transform 1.2s ease-out,
+		opacity 1.2s ease-out;
+}
+
+.in {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.out {
+	transform: translateY(50%);
+	opacity: 0;
+}
