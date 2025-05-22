@@ -141,6 +141,11 @@
 		{
 			"files": ["*.scss"],
 			"rules": {
+				"property-no-vendor-prefix": null,
+				"value-no-vendor-prefix": null,
+				"selector-no-vendor-prefix": null,
+				"media-feature-name-no-vendor-prefix": null,
+				"at-rule-no-vendor-prefix": null,
 				"scss/at-each-key-value-single-line": true,
 				"scss/at-extend-no-missing-placeholder": true,
 				"scss/load-no-partial-leading-underscore": true,

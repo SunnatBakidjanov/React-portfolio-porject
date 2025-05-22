@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from 'react'
+import { useEffect, useReducer, useRef } from 'react'
 
 const texts = [
 	'« Я фронтенд разработчик »',
@@ -43,12 +43,36 @@ function reducer(state, action) {
 
 export const useWelcomeText = () => {
 	const [state, dispatch] = useReducer(reducer, initialState)
+	const timerRef = useRef(null)
+
+	const startTimer = () => {
+		if (!timerRef.current) {
+			timerRef.current = setInterval(() => {
+				dispatch({ type: STATE.ANIMATE_OUT })
+			}, CHANGE_TIMER)
+		}
+	}
+
+	const stopTimer = () => {
+		if (timerRef.current) {
+			clearInterval(timerRef.current)
+			timerRef.current = null
+		}
+	}
 
 	useEffect(() => {
-		const interval = setInterval(() => {
-			dispatch({ type: STATE.ANIMATE_OUT })
-		}, CHANGE_TIMER)
-		return () => clearInterval(interval)
+		startTimer()
+
+		const handleVisibilityChange = () => {
+			document.hidden ? stopTimer() : startTimer()
+		}
+
+		document.addEventListener('visibilitychange', handleVisibilityChange)
+
+		return () => {
+			stopTimer()
+			document.removeEventListener('visibilitychange', handleVisibilityChange)
+		}
 	}, [])
 
 	const handleTransitionEnd = () => {

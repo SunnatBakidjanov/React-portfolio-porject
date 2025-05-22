@@ -9,17 +9,20 @@
 	height: fit-content;
 	font-size: var(--skills-text-font-size);
 	color: var(--text-color);
-	transition:
-		transform 1.2s ease-out,
-		opacity 1.2s ease-out;
 }
 
 .in {
+	transition:
+		transform 1s ease,
+		opacity 1s ease;
 	transform: translateY(0);
 	opacity: 1;
 }
 
 .out {
+	transition:
+		transform 1s ease-out,
+		opacity 1s ease-out;
 	transform: translateY(50%);
 	opacity: 0;
 }

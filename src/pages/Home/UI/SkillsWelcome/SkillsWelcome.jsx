@@ -8,7 +8,7 @@ export const SkillsWelcome = () => {
 	return (
 		<div className={styles.block}>
 			<div className={`${styles.text} ${styles[phase]}`} onTransitionEnd={handleTransitionEnd}>
-				{texts[index]}
+				{texts[index] || '« Я фронтенд разработчик »'}
 			</div>
 		</div>
 	)
